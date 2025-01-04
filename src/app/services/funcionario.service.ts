@@ -1,9 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+import { Funcionario } from '../models/Funcionarios';
+import { Response } from '../models/Response';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class FuncionarioService {
 
-  constructor() { }
+  private apiUrl = `${environment.ApiUrl}/Funcionario`
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  //Espera trazer os dados do service response da API criada
+  GetFuncionarios() : Observable<Response<Funcionario[]>> {
+    return this.http.get<Response<Funcionario[]>>(this.apiUrl);
+  } 
+
 }
