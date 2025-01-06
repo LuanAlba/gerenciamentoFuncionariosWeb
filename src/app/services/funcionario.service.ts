@@ -18,12 +18,20 @@ export class FuncionarioService {
   ) { }
 
   //Espera trazer os dados do service response da API criada
-  GetFuncionarios() : Observable<Response<Funcionario[]>> {
+  GetFuncionarios(): Observable<Response<Funcionario[]>> {
     return this.http.get<Response<Funcionario[]>>(this.apiUrl);
-  } 
+  }
 
-  createFuncionario(funcionario: Funcionario) : Observable<Response<Funcionario[]>>{
-    return this.http.post<Response<Funcionario[]>>(`${this.apiUrl}`,funcionario);
+  GetFuncionarioId(id: number): Observable<Response<Funcionario>> {
+    return this.http.get<Response<Funcionario>>(`${this.apiUrl}/${id}`);
+  }
+
+  createFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
+    return this.http.post<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
+  }
+
+  updateFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
+    return this.http.put<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
   }
 
 }

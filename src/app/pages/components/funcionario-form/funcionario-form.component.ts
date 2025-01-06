@@ -12,6 +12,7 @@ export class FuncionarioFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Funcionario>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
+  @Input() dadosFuncionario: Funcionario | undefined;
 
   funcionarioForm!: FormGroup
 
@@ -19,9 +20,11 @@ export class FuncionarioFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.funcionarioForm = new FormGroup({
-      nome: new FormControl('', [ Validators.required ]),
-      cpf: new FormControl('', [ Validators.required ]),
-      turno: new FormControl('', [ Validators.required ])
+      id: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.id : 0),
+      nome: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.nome : '', [ Validators.required ]),
+      cpf: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.cpf : '', [ Validators.required ]),
+      turno: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.turno : '', [ Validators.required ]),
+      ativo: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.ativo : true)
     })
   }
 

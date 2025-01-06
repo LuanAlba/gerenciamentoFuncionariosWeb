@@ -1,1 +1,8 @@
-<p>editar-funcionario works!</p>
+<!-- ir para Somente carregar quando o funcionário estiver preenchido -->
+<div *ngIf="funcionario"> 
+    <app-funcionario-form [btnAcao]="btnAcao" 
+                        [btnTitulo]="btnTitulo"
+                        [dadosFuncionario]="funcionario"
+                        (onSubmit)="updateFuncionario($event)">
+                    </app-funcionario-form>
+</div>
