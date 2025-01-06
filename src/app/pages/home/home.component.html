@@ -1,10 +1,8 @@
 <div class="funcionario-box">
-    <button>Cadastrar novo funcionário</button>
+    <button routerLink="/cadastrarFuncionario">Cadastrar novo funcionário</button>
     <div class="input-box">
         <label>Procurar:</label>
-        <input type="text" 
-               placeholder="Qual registro está buscando?"
-               (input)="search($event)">
+        <input type="text" placeholder="Qual registro está buscando?" (input)="search($event)">
     </div>
 </div>
 

@@ -1,0 +1,24 @@
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="funcionarioForm" (submit)="submit()" #formDir="ngForm">
+    <div class="input-box">
+        <label for="">Nome:</label>
+        <input type="text" formControlName="nome" placeholder="Insira o nome!" required>
+    </div>
+    <div class="input-box">
+        <label for="">CPF:</label>
+        <input type="text" formControlName="cpf" placeholder="Insira o CPF!" required>
+    </div>
+    <div class="input-box">
+        <label for="">Turno:</label>
+        <select id="turno" formControlName="turno" required>
+            <option value="manha">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+        </select>
+    </div>
+    <div class="btn-box">
+        <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
+        <button routerLink="">Voltar</button>
+    </div>
+</form>
