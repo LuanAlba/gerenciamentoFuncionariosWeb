@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
       const dados = response.data;
 
       dados.map((item) => {
-        console.log(item)
         item.admissao = new Date(item.admissao!).toLocaleDateString('pt-BR');
         item.alteradoEm ? new Date(item.admissao!).toLocaleDateString('pt-BR') : null;
       })

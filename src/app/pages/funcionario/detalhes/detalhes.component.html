@@ -1,0 +1,43 @@
+<div>
+    <h1>Detalhes do funcionário</h1>
+</div>
+
+<div *ngIf="funcionario">
+    <form>
+        <div class="input-box">
+            <label>Situação:</label>
+            <input type="text" value="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Nome:</label>
+            <input type="text" value="{{funcionario.nome}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>CPF:</label>
+            <input type="text" value="{{funcionario.cpf}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Turno:</label>
+            <input type="text" value="{{funcionario.turno}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Data de admissao:</label>
+            <input type="text" value="{{funcionario.admissao}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Data de alteração:</label>
+            <input type="text" value="{{funcionario.alteradoEm}}" disabled>
+        </div>
+
+        <div class="btn-box">
+            <button (click)="inativarFuncionario()">Inativar funcionário</button>
+            <!-- <button *ngIf="funcionario.ativo == true; else inativo" (click)="inativarFuncionario()">
+                Inativar funcionário
+            </button>
+            <ng-template #inativo>
+                <button (click)="ativarFuncionario()">Ativar funcionário</button>
+            </ng-template> -->
+            <button routerLink="">Voltar</button>
+        </div>
+    </form>
+</div>
