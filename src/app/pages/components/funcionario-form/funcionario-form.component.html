@@ -1,25 +1,37 @@
-<h1>{{btnTitulo}}</h1>
+<mat-card>
+    <h1>{{btnTitulo}}</h1>
+    <form [formGroup]="funcionarioForm" (submit)="submit()" #formDir="ngForm">
+        <input type="hidden" formControlName="id">
 
-<form [formGroup]="funcionarioForm" (submit)="submit()" #formDir="ngForm">
-    <input type="hidden" formControlName="id">
-    <div class="input-box">
-        <label for="">Nome:</label>
-        <input type="text" formControlName="nome" placeholder="Insira o nome!" required>
-    </div>
-    <div class="input-box">
-        <label for="">CPF:</label>
-        <input type="text" formControlName="cpf" placeholder="Insira o CPF!" required>
-    </div>
-    <div class="input-box">
-        <label for="">Turno:</label>
-        <select id="turno" formControlName="turno" required>
-            <option value="Manha">Manhã</option>
-            <option value="Tarde">Tarde</option>
-            <option value="Noite">Noite</option>
-        </select>
-    </div>
-    <div class="btn-box">
-        <button type="submit" [disabled]="!funcionarioForm.valid">{{btnAcao}}</button>
-        <button routerLink="">Voltar</button>
-    </div>
-</form>
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">Nome:</mat-label>
+                <input matInput type="text" formControlName="nome" placeholder="Insira o nome!" required>
+            </mat-form-field>
+        </div>
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">CPF:</mat-label>
+                <input matInput type="text" formControlName="cpf" placeholder="Insira o CPF!" required>
+            </mat-form-field>
+        </div>
+
+        <div class="input-box">
+            <mat-form-field>
+                <mat-label for="">Turno:</mat-label>
+                <mat-select id="turno" formControlName="turno" required>
+                    <mat-option value="Manha">Manhã</mat-option>
+                    <mat-option value="Tarde">Tarde</mat-option>
+                    <mat-option value="Noite">Noite</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" [disabled]="!funcionarioForm.valid" mat-raised-button
+                color="accent">{{btnAcao}}</button>
+            <button routerLink="" mat-raised-button>Voltar</button>
+        </div>
+    </form>
+</mat-card>
