@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
 
   funcionarios: Funcionario[] = []
   funcionariosGeral: Funcionario[] = []
+  colunas = ['Situação', 'Nome', 'CPF', 'Turno', 'Admissao', 'Ações']
 
   constructor(private funcionarioService: FuncionarioService) { }
 
-  //para ao startar a home já fazer automaticamente o get que será implementado
   ngOnInit(): void {
     this.funcionarioService.GetFuncionarios().subscribe((response) => {
       const dados = response.data;

@@ -1,43 +1,57 @@
-<div>
-    <h1>Detalhes do funcionário</h1>
-</div>
+<mat-card>
+    <div>
+        <h1>Detalhes do funcionário</h1>
+    </div>
 
-<div *ngIf="funcionario">
-    <form>
-        <div class="input-box">
-            <label>Situação:</label>
-            <input type="text" value="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}" disabled>
-        </div>
-        <div class="input-box">
-            <label>Nome:</label>
-            <input type="text" value="{{funcionario.nome}}" disabled>
-        </div>
-        <div class="input-box">
-            <label>CPF:</label>
-            <input type="text" value="{{funcionario.cpf}}" disabled>
-        </div>
-        <div class="input-box">
-            <label>Turno:</label>
-            <input type="text" value="{{funcionario.turno}}" disabled>
-        </div>
-        <div class="input-box">
-            <label>Data de admissao:</label>
-            <input type="text" value="{{funcionario.admissao}}" disabled>
-        </div>
-        <div class="input-box">
-            <label>Data de alteração:</label>
-            <input type="text" value="{{funcionario.alteradoEm}}" disabled>
-        </div>
+    <div *ngIf="funcionario">
+        <form>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Situação:</mat-label>
+                    <input matInput type="text" value="{{funcionario.ativo ? 'Ativo' : 'Inativo'}}" [disabled]="true">
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Nome:</mat-label>
+                    <input matInput type="text" value="{{funcionario.nome}}" [disabled]="true">
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>CPF:</mat-label>
+                    <input matInput type="text" value="{{funcionario.cpf}}" [disabled]="true">
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Turno:</mat-label>
+                    <input matInput type="text" value="{{funcionario.turno}}" [disabled]="true">
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Data de admissao:</mat-label>
+                    <input matInput type="text" value="{{funcionario.admissao}}" [disabled]="true">
+                </mat-form-field>
+            </div>
+            <div class="input-box">
+                <mat-form-field>
+                    <mat-label>Data de alteração:</mat-label>
+                    <input matInput type="text" value="{{funcionario.alteradoEm}}" [disabled]="true">
+                </mat-form-field>
+            </div>
 
-        <div class="btn-box">
-            <button (click)="inativarFuncionario()">Inativar funcionário</button>
-            <!-- <button *ngIf="funcionario.ativo == true; else inativo" (click)="inativarFuncionario()">
+            <div class="btn-box">
+                <button mat-raised-button color="warn" (click)="inativarFuncionario()">Inativar funcionário</button>
+                <!-- <button *ngIf="funcionario.ativo == true; else inativo" (click)="inativarFuncionario()">
                 Inativar funcionário
             </button>
             <ng-template #inativo>
                 <button (click)="ativarFuncionario()">Ativar funcionário</button>
             </ng-template> -->
-            <button routerLink="">Voltar</button>
-        </div>
-    </form>
-</div>
+                <button mat-raised-button routerLink="">Voltar</button>
+            </div>
+        </form>
+    </div>
+</mat-card>

@@ -1,0 +1,8 @@
+.btn-box button {
+    margin: 0 2px;
+}
+
+.mat-mdc-form-field-input-control:disabled {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
