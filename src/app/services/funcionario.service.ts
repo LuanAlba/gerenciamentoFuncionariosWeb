@@ -38,4 +38,7 @@ export class FuncionarioService {
     return this.http.patch<Response<Funcionario>>(`${this.apiUrl}/inativarFuncionario?id=${id}`, id);
   }
 
+  excluirFuncionario(id: number): Observable<Response<Funcionario[]>> {
+    return this.http.delete<Response<Funcionario[]>>(`${this.apiUrl}?id=${id}`);
+  }
 }

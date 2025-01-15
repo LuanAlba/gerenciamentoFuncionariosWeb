@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; //para usar na service
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para os formularios
 
+//Angular material imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { AdicionarFuncionarioComponent } from './pages/funcionario/adicionar-fun
 import { FuncionarioFormComponent } from './pages/components/funcionario-form/funcionario-form.component';
 import { EditarFuncionarioComponent } from './pages/funcionario/editar-funcionario/editar-funcionario.component';
 import { DetalhesComponent } from './pages/funcionario/detalhes/detalhes.component';
+import { ModalExcluirComponent } from './pages/components/modal-excluir/modal-excluir.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { DetalhesComponent } from './pages/funcionario/detalhes/detalhes.compone
     AdicionarFuncionarioComponent,
     FuncionarioFormComponent,
     EditarFuncionarioComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    ModalExcluirComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { DetalhesComponent } from './pages/funcionario/detalhes/detalhes.compone
     MatCardModule,
     MatInputModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

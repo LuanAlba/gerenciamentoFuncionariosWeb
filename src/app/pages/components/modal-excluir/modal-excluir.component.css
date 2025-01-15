@@ -1,0 +1,17 @@
+mat-card {
+    width: 95%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1,5rem;
+    margin-top: 2rem;
+}
+
+.btn-box {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

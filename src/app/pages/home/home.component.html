@@ -47,7 +47,7 @@
             <td mat-cell *matCellDef="let funcionario">
                 <button mat-raised-button style="margin: 5px" routerLink="/detalhes/{{funcionario.id}}">Detalhes</button>
                 <button mat-raised-button color="accent" style="margin: 5px" routerLink="/editarFuncionario/{{funcionario.id}}">Editar</button>
-                <button mat-raised-button color="warn">Excluir</button>
+                <button mat-raised-button color="warn" (click)="openDialog(funcionario.id)">Excluir</button>
             </td>
         </ng-container>
 
